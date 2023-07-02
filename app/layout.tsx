@@ -1,7 +1,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import ThemeContext from "./ThemeContext";
+import ThemeContext from "../context/ThemeContext";
 import Navbar from "@/components/Navbar";
+import ReduxProvider from "@/context/ReduxProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`w-full h-full ${inter.className}`}>
-        <ThemeContext>
-          <div className="w-full h-full px-8 pt-4 pb-16">
-            <Navbar/>
-            {children}
-          </div>
-        </ThemeContext>
+        <ReduxProvider>
+          <ThemeContext>
+            <div className="w-full h-full px-8 pt-4 pb-16">
+              <Navbar />
+              {children}
+            </div>
+          </ThemeContext>
+        </ReduxProvider>
       </body>
     </html>
   );

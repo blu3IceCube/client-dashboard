@@ -21,7 +21,7 @@ const Navbar = (props: Props) => {
       </FlexContainer>
 
       <FlexContainer className="gap-8">
-        <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+        <Box display="flex" alignItems="center" sx={{ "&:hover": { color: palette.primary[100] } }}>
           <Link
             className={currentPath === "/" ? "text-gray-400" : "text-gray-700"}
             href="/"
@@ -29,7 +29,7 @@ const Navbar = (props: Props) => {
             Dashboard
           </Link>
         </Box>
-        <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+        <Box display="flex" alignItems="center" sx={{ "&:hover": { color: palette.primary[100] } }}>
           <Link
             className={currentPath === "/predictions" ? "text-gray-400" : "text-gray-700"}
             href="/predictions"
