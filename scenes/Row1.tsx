@@ -1,4 +1,6 @@
+
 import { useGetKpisQuery } from "@/app/api/state/api";
+import BoxHeader from "@/components/BoxHeader";
 import DashboardBox from "@/components/DasboardBox";
 import { useTheme } from "@mui/material";
 import { useMemo } from "react";
@@ -17,7 +19,7 @@ type Props = {};
 const Row1 = (props: Props) => {
   const { palette } = useTheme();
   const { data } = useGetKpisQuery();
-  // console.log("data", data);
+  console.log("data", data);
 
   const revenueExpenses = useMemo(() => {
     return (
@@ -35,6 +37,11 @@ const Row1 = (props: Props) => {
   return (
     <>
       <DashboardBox gridArea="a">
+        <BoxHeader
+          title="Revenue and Expenses"
+          subtitle="top line represents revenue, bottom line represents expenses"
+          sideText="+4%"
+        />
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             width={500}
@@ -104,7 +111,13 @@ const Row1 = (props: Props) => {
           </AreaChart>
         </ResponsiveContainer>
       </DashboardBox>
-      <DashboardBox gridArea="b"></DashboardBox>
+      <DashboardBox gridArea="b">
+        <BoxHeader
+          title="Revenue and Expenses"
+          subtitle="top line represents revenue, bottom line represents expenses"
+          sideText="+4%"
+        />
+      </DashboardBox>
       <DashboardBox gridArea="c"></DashboardBox>
     </>
   );
