@@ -66,7 +66,6 @@ const Row1 = (props: Props) => {
   return (
     <>
       <DashboardBox gridArea="a">
-        <div className="w-full">
           <BoxHeader
             title="Revenue and Expenses"
             subtitle="top line represents revenue, bottom line represents expenses"
@@ -83,6 +82,7 @@ const Row1 = (props: Props) => {
                 left: -10,
                 bottom: 60,
               }}
+              style={{position: "absolute"}}
             >
               <defs>
                 <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
@@ -121,7 +121,7 @@ const Row1 = (props: Props) => {
                 style={{ fontSize: "10px" }}
                 domain={[8000, 23000]}
               />
-              <Tooltip />
+              <Tooltip contentStyle={{color: "#71f5de"}}/>
               <Area
                 type="monotone"
                 dataKey="revenue"
@@ -140,10 +140,8 @@ const Row1 = (props: Props) => {
               />
             </AreaChart>
           </ResponsiveContainer>
-        </div>
       </DashboardBox>
       <DashboardBox gridArea="b">
-        <div className="w-full">
           <BoxHeader
             title="Profit and Revenue"
             subtitle="top line represents revenue, bottom line represents profit"
@@ -160,6 +158,7 @@ const Row1 = (props: Props) => {
                 left: -10,
                 bottom: 55,
               }}
+              style={{position: "absolute"}}
             >
               <CartesianGrid vertical={false} stroke={palette.grey[800]} />
               <XAxis
@@ -180,7 +179,7 @@ const Row1 = (props: Props) => {
                 axisLine={false}
                 style={{ fontSize: "10px" }}
               />
-              <Tooltip />
+              <Tooltip contentStyle={{color: "#71f5de"}}/>
               <Legend
                 height={20}
                 wrapperStyle={{
@@ -201,10 +200,8 @@ const Row1 = (props: Props) => {
               />
             </LineChart>
           </ResponsiveContainer>
-        </div>
       </DashboardBox>
       <DashboardBox gridArea="c">
-        <div className="w-full">
           <BoxHeader
             title="Revenue Month by Month"
             subtitle="graph representing the revenue month by month"
@@ -221,6 +218,7 @@ const Row1 = (props: Props) => {
                 left: -5,
                 bottom: 58,
               }}
+              style={{position: "absolute"}}
             >
               <defs>
                 <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
@@ -252,7 +250,6 @@ const Row1 = (props: Props) => {
               <Bar dataKey="revenue" fill="url(#colorRevenue)" />
             </BarChart>
           </ResponsiveContainer>
-        </div>
       </DashboardBox>
     </>
   );
